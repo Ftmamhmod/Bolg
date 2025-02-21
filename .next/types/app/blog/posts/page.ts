@@ -39,6 +39,9 @@ checkFields<
   >
 >();
 
+// Check the prop type of the entry function
+checkFields<Diff<PageProps, FirstArg<TEntry["default"]>, "default">>();
+
 // Check the arguments and return type of the generateMetadata function
 if ("generateMetadata" in entry) {
   checkFields<
@@ -102,6 +105,10 @@ type PageParams = any;
 export interface PageProps {
   params?: any;
   searchParams?: any;
+  id?: string;
+  title?: string;
+  content?: string;
+  date?: string;
 }
 export interface LayoutProps {
   children?: React.ReactNode;
