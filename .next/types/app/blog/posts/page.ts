@@ -25,7 +25,7 @@ checkFields<Diff<{
 }, TEntry, ''>>()
 
 // Check the prop type of the entry function
-checkFields<Diff<PageProps, FirstArg<TEntry['default']>, 'default'>>()
+checkFields<Diff<PageProps, FirstArg<MaybeField<TEntry, 'generateMetadata'>>, 'generateMetadata'>>()
 
 // Check the arguments and return type of the generateMetadata function
 if ('generateMetadata' in entry) {
