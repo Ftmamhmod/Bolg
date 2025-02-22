@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import type { PluginAPI } from "tailwindcss/types/config";
 const plugin = require('tailwindcss/plugin')
 
 const config: Config = {
@@ -18,7 +17,7 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(({ addBase, theme }: PluginAPI) => {
+    plugin(function({ addBase, theme }) {
       addBase({
         'h1': { fontSize: theme('fontSize.2xl') },
         'h2': { fontSize: theme('fontSize.xl') },
